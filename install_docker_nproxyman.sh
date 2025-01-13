@@ -62,7 +62,7 @@ startInstall()
     clear
     echo "#######################################################"
     echo "###         Preparing for Installation              ###"
-    echo "###         Write Code By Eng.Ezz gaber             ###"
+    echo "###         This Code By Eng.Ezz Gaber              ###"
     echo "#######################################################"
     echo ""
     sleep 3s
@@ -199,7 +199,7 @@ startInstall()
     if [[ "$DCOMP" = [yY] ]]; then
         echo "############################################"
         echo "######     Install Docker-Compose     ######"
-        echo "######   Write Code By Eng.Ezz gaber     ###"
+        echo "######   This Code By Eng.Ezz Gaber   ######"
         echo "############################################"
 
         # install docker-compose
@@ -274,7 +274,6 @@ startInstall()
     if [[ "$NPM" == [yY] ]]; then
         echo "##########################################"
         echo "###     Install NGinX Proxy Manager    ###"
-        echo "###     Write Code By Eng.Ezz gaber    ###"
         echo "##########################################"
     
         # pull an nginx proxy manager docker-compose file from github
@@ -314,7 +313,6 @@ startInstall()
     if [[ "$PORT" == "1" ]]; then
         echo "########################################"
         echo "###      Installing Portainer-CE     ###"
-        echo "###     Write Code By Eng.Ezz gab    ###"
         echo "########################################"
         echo ""
         echo "    1. Preparing to Install Portainer-CE"
@@ -336,7 +334,6 @@ startInstall()
     if [[ "$PORT" == "2" ]]; then
         echo "###########################################"
         echo "###      Installing Portainer Agent     ###"
-        echo "###      Write Code By Eng.Ezz gab      ###"
         echo "###########################################"
         echo ""
         echo "    1. Preparing to install Portainer Agent"
@@ -354,40 +351,39 @@ startInstall()
     fi
 
     #if [[ "$NAVID" == [yY] ]]; then
-     #   echo "###########################################"
-     #   echo "###        Installing Navidrome         ###"
-     #   echo "###     Write Code By Eng.Ezz gaber     ###"
-     #   echo "###########################################"
-     #   echo ""
-     #   echo "    1. Preparing to install Navidrome"
+        #echo "###########################################"
+        #echo "###        Installing Navidrome         ###"
+        #echo "###########################################"
+        #echo ""
+        #echo "    1. Preparing to install Navidrome"
 
-     #   mkdir -p docker/navidrome
-     #   cd docker/navidrome
+        #mkdir -p docker/navidrome
+        #cd docker/navidrome
 
-     #   curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose_navidrome.yml -o docker-compose.yml >> ~/docker-script-install.log 2>&1
+        #curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose_navidrome.yml -o docker-compose.yml >> ~/docker-script-install.log 2>&1
 
-     #   echo "    2. Running the docker-compose.yml to install and start Navidrome"
-     #   echo ""
-     #   echo ""
+        #echo "    2. Running the docker-compose.yml to install and start Navidrome"
+        #echo ""
+        #3echo ""
 
-        if [[ "$OS" == "1" ]]; then
-          docker-compose up -d
-        fi
+        #if [[ "$OS" == "1" ]]; then
+          #docker-compose up -d
+        #fi
 
-        if [[ "$OS" != "1" ]]; then
-          sudo docker-compose up -d
-        fi
+        #if [[ "$OS" != "1" ]]; then
+          #sudo docker-compose up -d
+        #fi
 
-        echo ""
-        echo ""
-        echo "    Navigate to your server hostname / IP address on port 4533 to setup"
-        echo "    your new Navidrome admin account."
-        echo ""      
-        sleep 3s
-        cd
-    fi
+        #echo ""
+        #echo ""
+        #echo "    Navigate to your server hostname / IP address on port 4533 to setup"
+        #echo "    your new Navidrome admin account."
+        #echo ""      
+        #sleep 3s
+        #cd
+    #fi
 
-    exit 1
+    #exit 1
 }
 
 echo ""

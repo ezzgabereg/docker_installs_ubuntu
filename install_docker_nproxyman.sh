@@ -32,7 +32,7 @@ installApps()
     fi
 
     read -rp "NGinX Proxy Manager (y/n): " NPM
-    read -rp "Navidrome (y/n): " NAVID
+    #read -rp "Navidrome (y/n): " NAVID
     read -rp "Portainer-CE (y/n): " PTAIN
 
     if [[ "$PTAIN" == [yY] ]]; then
@@ -277,14 +277,14 @@ startInstall()
         echo "##########################################"
     
         # pull an nginx proxy manager docker-compose file from github
-        echo "    1. Pulling a default NGinX Proxy Manager docker-compose.yml file."
+        echo "    1. Pulling a default NGinX Proxy Manager docker_compose.nginx_proxy_manager.yml file."
 
         mkdir -p docker/nginx-proxy-manager
         cd docker/nginx-proxy-manager
 
         curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose.nginx_proxy_manager.yml -o docker-compose.yml >> ~/docker-script-install.log 2>&1
 
-        echo "    2. Running the docker-compose.yml to install and start NGinX Proxy Manager"
+        echo "    2. Running the docker_compose.nginx_proxy_manager.yml to install and start NGinX Proxy Manager"
         echo ""
         echo ""
 

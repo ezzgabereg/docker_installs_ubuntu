@@ -32,7 +32,7 @@ installApps()
     fi
 
     read -rp "NGinX Proxy Manager (y/n): " NPM
-    #read -rp "Navidrome (y/n): " NAVID
+    read -rp "Navidrome (y/n): " NAVID
     read -rp "Portainer-CE (y/n): " PTAIN
 
     if [[ "$PTAIN" == [yY] ]]; then
@@ -62,7 +62,6 @@ startInstall()
     clear
     echo "#######################################################"
     echo "###         Preparing for Installation              ###"
-    echo "###         This Code By Eng.Ezz Gaber              ###"
     echo "#######################################################"
     echo ""
     sleep 3s
@@ -199,7 +198,6 @@ startInstall()
     if [[ "$DCOMP" = [yY] ]]; then
         echo "############################################"
         echo "######     Install Docker-Compose     ######"
-        echo "######   This Code By Eng.Ezz Gaber   ######"
         echo "############################################"
 
         # install docker-compose
@@ -277,14 +275,14 @@ startInstall()
         echo "##########################################"
     
         # pull an nginx proxy manager docker-compose file from github
-        echo "    1. Pulling a default NGinX Proxy Manager docker_compose.nginx_proxy_manager.yml file."
+        echo "    1. Pulling a default NGinX Proxy Manager docker-compose.yml file."
 
         mkdir -p docker/nginx-proxy-manager
         cd docker/nginx-proxy-manager
 
-        curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose.nginx_proxy_manager.yml -o docker_compose.nginx_proxy_manager.yml >> ~/docker-script-install.log 2>&1
+        curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose.nginx_proxy_manager.yml -o docker-compose.yml >> ~/docker-script-install.log 2>&1
 
-        echo "    2. Running the docker_compose.nginx_proxy_manager.yml to install and start NGinX Proxy Manager"
+        echo "    2. Running the docker-compose.yml to install and start NGinX Proxy Manager"
         echo ""
         echo ""
 
@@ -360,11 +358,11 @@ startInstall()
         mkdir -p docker/navidrome
         cd docker/navidrome
 
-        curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose_navidrome.yml -o docker_compose_navidrome.yml >> ~/docker-script-install.log 2>&1
+        curl https://gitlab.com/bmcgonag/docker_installs/-/raw/main/docker_compose_navidrome.yml -o docker-compose.yml >> ~/docker-script-install.log 2>&1
 
-        echo "    2. Running the docker_compose_navidrome.yml to install and start Navidrome"
+        echo "    2. Running the docker-compose.yml to install and start Navidrome"
         echo ""
-        3echo ""
+        echo ""
 
         if [[ "$OS" == "1" ]]; then
           docker-compose up -d
